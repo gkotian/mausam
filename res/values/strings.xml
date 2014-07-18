@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mausam</string>
+    <string name="action_settings">Settings</string>
+    <string name="updating">Updating... please wait</string>
+    <string name="failed">Failed :(</string>
+    <string name="nearby_cities">Nearby cities</string>
+    <string name="temperature">temperature</string>
+    <string name="pressure">pressure</string>
+    <string name="humidity">humidity</string>
+    <string name="title_activity_gpssettings">GPSSettingsActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

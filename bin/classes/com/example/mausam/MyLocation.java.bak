@@ -1,0 +1,82 @@
+package com.example.mausam;
+
+import java.util.List;
+
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MyLocation implements LocationListener
+{
+    private static double latitude;
+    private static double longitude;
+
+    public double getLatitude()
+    {
+        return latitude;
+    }
+
+    public double getLongitude()
+    {
+        return longitude;
+    }
+
+    /* Constructor. */
+    MyLocation(Context context)
+    {
+        try
+        {
+            LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, this);
+            //lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 200, 0, this);
+
+            List<String> providers = lm.getProviders(true);
+
+            Location l = null;
+
+            for (int i = providers.size() - 1; i >= 0; i--)
+            {
+                l = lm.getLastKnownLocation(providers.get(i));
+                if (l != null)
+                {
+                    latitude = l.getLatitude();
+                    longitude = l.getLongitude();
+                }
+            }
+
+            /* Temporarily hacking to always show Bangalore as the current city. */
+            latitude = 12.98;
+            longitude = 77.58;
+        }
+        catch (RuntimeException e)
+        {
+            Log.v("RuntimeException", e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    public void onLocationChanged(Location loc)
+    {
+        /* Do nothing */
+    }
+
+    public void onProviderDisabled(String provider)
+    {
+        /* Do nothing */
+    }
+
+    public void onProviderEnabled(String provider)
+    {
+        /* Do nothing */
+    }
+
+    public void onStatusChanged(String provider, int status, Bundle extras)
+    {
+        /* Do nothing */
+    }
+}
+

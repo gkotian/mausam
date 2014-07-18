@@ -1,0 +1,22 @@
+mkdir android
+cd android/
+extract adt-bundle-linux-x86_64.zip 
+cd adt-bundle-linux-x86_64/
+
+
+
+sudo apt-get install openjdk-7-jdk 
+sudo apt-get install libgl1-mesa-dev
+export LD_LIBRARY_PATH=/home/gautam/expts/android/adt-bundle-linux-x86_64/sdk/tools/lib
+sudo apt-get install ant
+sudo apt-get install ia32-libs
+
+android list
+android list avds
+android list targets
+
+android update project --target 1 --path .
+export PATH=$PATH:/home/gautam/expts/android/adt-bundle-linux-x86_64/sdk/tools/android:/home/gautam/expts/android/adt-bundle-linux-x86_64/sdk/platform-tools
+
+adb install bin/MainActivity-debug.apk 
+

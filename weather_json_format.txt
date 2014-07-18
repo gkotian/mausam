@@ -1,0 +1,14 @@
+Input: http://api.openweathermap.org/data/2.1/find/city?lat=23.98&lon=77.58&cnt=1
+--------------------
+<<<some initial fields>>>
+"list":[{
+"id"      :1256064,
+"name"    :"Sironj",
+"coord"   :{"lon":77.699997,"lat":24.1},
+"distance":18.07,
+"main"    :{"temp":287.31,"temp_min":287.34,"temp_max":288.7,"pressure":963.97,"humidity":56.4},
+"dt"      :1361040107,
+"wind"    :{"speed":4.39,"deg":280,"gust":7.3},
+"clouds"  :{"all":0},
+"weather" :[{"id":800,"main":"Clear","description":"Sky is Clear","icon":"01n"}]
+}]
